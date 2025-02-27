@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 // Quy trình đệ quy
 /*
@@ -141,3 +142,47 @@ class RecursiveExchangeSort
         Console.WriteLine("Mảng sau ExchangeSort: " + string.Join(", ", arr));
     }
 }
+
+
+class Program
+{
+    static void Main()
+    {
+        // Bài 1: Cài đặt danh sách liên kết đơn
+        LinkedListNode<string> node = new LinkedListNode<string>("Mike");
+        LinkedList<string> singleList = new LinkedList<string>();
+        singleList.AddFirst(node);
+        LinkedListNode<string> node1 = new LinkedListNode<string>("David");
+        singleList.AddAfter(node, node1);
+        LinkedListNode<string> node2 = new LinkedListNode<string>(null);
+        singleList.AddLast(node2);
+        Console.WriteLine("Danh sach lien ket don:");
+        foreach (var name in singleList)
+        {
+            Console.WriteLine(name ?? "NULL");
+        }
+
+        // Bài 2: Cài đặt danh sách liên kết kép
+        LinkedList<string> doubleList = new LinkedList<string>();
+        doubleList.AddFirst("Alice");
+        doubleList.AddLast("Bob");
+        doubleList.AddLast("Charlie");
+        Console.WriteLine("\nDanh sach lien ket kep:");
+        foreach (var name in doubleList)
+        {
+            Console.WriteLine(name);
+        }
+
+        // Bài 3: Danh sách liên kết tích hợp trong .NET
+        LinkedList<int> netList = new LinkedList<int>();
+        netList.AddLast(10);
+        netList.AddLast(20);
+        netList.AddLast(30);
+        Console.WriteLine("\nDanh sach lien ket trong .NET:");
+        foreach (var num in netList)
+        {
+            Console.WriteLine(num);
+        }
+    }
+}
+
